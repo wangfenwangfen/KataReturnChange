@@ -1,8 +1,10 @@
 class Change {
     private int coin2;
+    private int bill5;
 
-    Change(int coin2) {
+    Change(int coin2, int bill5) {
         this.coin2 = coin2;
+        this.bill5 = bill5;
     }
 
     @Override
