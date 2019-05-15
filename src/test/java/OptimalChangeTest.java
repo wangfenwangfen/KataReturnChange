@@ -10,4 +10,14 @@ public class OptimalChangeTest {
 
         Assertions.assertThat(result).isEqualTo(null);
     }
+
+    @Test
+    public void should_return_one_coin2_if_sum_is_2() {
+        Solution solution = new Solution();
+
+        Change result = solution.optimalChange(2);
+
+        Change expected = new Change(1);
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
 }
