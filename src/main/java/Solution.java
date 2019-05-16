@@ -7,31 +7,18 @@ class Solution {
 
         if (sum != 1) {
 
-            if (sum % 10 == 0) {
-                nombreBill10 = sum / 10;
-                return new Change(nombreCoin2, nombreBill5, nombreBill10);
-            }
-            if (sum == 5) {
-                nombreBill5 = sum / 5;
-                return new Change(nombreCoin2, nombreBill5, nombreBill10);
-            }
-
-            if (sum % 2 == 0) {
-                nombreCoin2 = sum / 2;
-                return new Change(nombreCoin2, nombreBill5, nombreBill10);
-            }
-
             int rest = sum;
 
             if (rest >= 10) {
                 rest = sum % 10;
                 nombreBill10 = (sum - rest) / 10;
             }
-            if (rest >= 5) {
+            if (rest == 5 ) {
                 sum = rest;
                 rest = sum % 5;
                 nombreBill5 = (sum - rest) / 5;
             }
+
             if (rest >= 2) {
                 sum = rest;
                 rest = sum % 2;
