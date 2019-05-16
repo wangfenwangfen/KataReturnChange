@@ -81,5 +81,32 @@ public class OptimalChangeTest {
         Assertions.assertThat(result).isEqualTo(expected);
     }
 
+    @Test
+    public void should_return_null_if_sum_is_3() {
+        Solution solution = new Solution();
+
+        Change result = solution.optimalChange(3);
+
+        Assertions.assertThat(result).isEqualTo(null);
+    }
+
+    @Test
+    public void should_return_2_bill10_1_bill5_2_coin2_if_sum_is_29() {
+        Solution solution = new Solution();
+
+        Change result = solution.optimalChange(29);
+        Change expected = new Change(2,1,2);
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    public void should_return_3_bill10_1_bill5_1_coin2_if_sum_is_37() {
+        Solution solution = new Solution();
+
+        Change result = solution.optimalChange(37);
+
+        Change expected = new Change(1,1,3);
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
 }
 

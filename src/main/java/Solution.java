@@ -22,11 +22,13 @@ class Solution {
                 rest = sum % VALUE_BILL5;
                 nombreBill5 = (sum - rest) / VALUE_BILL5;
             }
-
             if (shouldUseCoin2(rest)) {
                 sum = rest;
                 rest = sum % VALUE_COIN2;
                 nombreCoin2 = (sum - rest) / VALUE_COIN2;
+            }
+            if(!sumIsPossibleToGivenChange(rest)){
+                return null;
             }
             return new Change(nombreCoin2, nombreBill5, nombreBill10);
         }
@@ -38,7 +40,7 @@ class Solution {
     }
 
     private boolean shouldUseBill5(int rest) {
-        return rest == VALUE_BILL5;
+        return rest>6||rest == VALUE_BILL5;
     }
 
     private boolean shouldUseBille10(int rest) {
