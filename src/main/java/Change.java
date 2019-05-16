@@ -1,12 +1,16 @@
 class Change {
-    private int coin2;
-    private int bill5;
-    private  int bill10;
+    private long coin2;
+    private long bill5;
+    private  long bill10;
 
-    Change(int coin2, int bill5, int bill10) {
+    Change(long coin2, long bill5, long bill10) {
         this.coin2 = coin2;
         this.bill5 = bill5;
         this.bill10 = bill10;
+    }
+
+    long calculateSum(){
+        return coin2*2+bill5*5+bill10*10;
     }
 
     @Override
@@ -32,9 +36,9 @@ class Change {
 
     @Override
     public int hashCode() {
-        int result = coin2;
-        result = 31 * result + bill5;
-        result = 31 * result + bill10;
+        int result = (int) (coin2 ^ (coin2 >>> 32));
+        result = 31 * result + (int) (bill5 ^ (bill5 >>> 32));
+        result = 31 * result + (int) (bill10 ^ (bill10 >>> 32));
         return result;
     }
 }

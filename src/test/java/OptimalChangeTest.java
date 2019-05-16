@@ -1,6 +1,8 @@
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
+import static org.assertj.core.api.Assertions.*;
+
 public class OptimalChangeTest {
     @Test
     public void should_return_null_if_not_possible_given_change() {
@@ -8,7 +10,7 @@ public class OptimalChangeTest {
 
         Change result = solution.optimalChange(1);
 
-        Assertions.assertThat(result).isEqualTo(null);
+        assertThat(result).isEqualTo(null);
     }
 
     @Test
@@ -18,7 +20,7 @@ public class OptimalChangeTest {
         Change result = solution.optimalChange(2);
 
         Change expected = new Change(1,0,0);
-        Assertions.assertThat(result).isEqualTo(expected);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -28,7 +30,7 @@ public class OptimalChangeTest {
         Change result = solution.optimalChange(5);
 
         Change expected = new Change(0, 1,0);
-        Assertions.assertThat(result).isEqualTo(expected);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -38,7 +40,7 @@ public class OptimalChangeTest {
         Change result = solution.optimalChange(10);
 
         Change expected = new Change(0, 0, 1);
-        Assertions.assertThat(result).isEqualTo(expected);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -48,7 +50,7 @@ public class OptimalChangeTest {
         Change result = solution.optimalChange(6);
 
         Change expected = new Change(3,0,0);
-        Assertions.assertThat(result).isEqualTo(expected);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -58,7 +60,7 @@ public class OptimalChangeTest {
         Change result = solution.optimalChange(20);
 
         Change expected = new Change(0,0,2);
-        Assertions.assertThat(result).isEqualTo(expected);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -68,7 +70,7 @@ public class OptimalChangeTest {
         Change result = solution.optimalChange(15);
 
         Change expected = new Change(0,1,1);
-        Assertions.assertThat(result).isEqualTo(expected);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -78,7 +80,7 @@ public class OptimalChangeTest {
         Change result = solution.optimalChange(16);
 
         Change expected = new Change(3,0,1);
-        Assertions.assertThat(result).isEqualTo(expected);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -87,7 +89,7 @@ public class OptimalChangeTest {
 
         Change result = solution.optimalChange(3);
 
-        Assertions.assertThat(result).isEqualTo(null);
+        assertThat(result).isEqualTo(null);
     }
 
     @Test
@@ -96,7 +98,7 @@ public class OptimalChangeTest {
 
         Change result = solution.optimalChange(29);
         Change expected = new Change(2,1,2);
-        Assertions.assertThat(result).isEqualTo(expected);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -106,7 +108,7 @@ public class OptimalChangeTest {
         Change result = solution.optimalChange(37);
 
         Change expected = new Change(1,1,3);
-        Assertions.assertThat(result).isEqualTo(expected);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -115,7 +117,16 @@ public class OptimalChangeTest {
 
         Change result = solution.optimalChange(101);
 
-        Assertions.assertThat(result).isEqualTo(null);
+        assertThat(result).isEqualTo(null);
+    }
+
+    @Test
+    public void total_Sum_should_be_equals_the_origin_Sum(){
+        Solution solution = new Solution();
+
+        Change change = solution.optimalChange(109);
+        long result = change.calculateSum();
+        assertThat(result).isEqualTo(109);
     }
 }
 
