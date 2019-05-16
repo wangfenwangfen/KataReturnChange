@@ -108,5 +108,14 @@ public class OptimalChangeTest {
         Change expected = new Change(1,1,3);
         Assertions.assertThat(result).isEqualTo(expected);
     }
+
+    @Test
+    public void should_return_null_if_sum_is_101() {
+        Solution solution = new Solution();
+
+        Change result = solution.optimalChange(101);
+
+        Assertions.assertThat(result).isEqualTo(null);
+    }
 }
 
