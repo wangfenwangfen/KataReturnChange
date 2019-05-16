@@ -80,5 +80,6 @@ public class OptimalChangeTest {
         Change expected = new Change(3,0,1);
         Assertions.assertThat(result).isEqualTo(expected);
     }
+
 }
 
