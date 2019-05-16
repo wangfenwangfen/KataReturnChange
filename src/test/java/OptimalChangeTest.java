@@ -51,5 +51,15 @@ public class OptimalChangeTest {
         Assertions.assertThat(result).isEqualTo(expected);
     }
 
+    @Test
+    public void should_return_2_bill10_if_sum_is_20() {
+        Solution solution = new Solution();
+
+        Change result = solution.optimalChange(20);
+
+        Change expected = new Change(0,0,2);
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
 }
 
