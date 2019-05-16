@@ -10,6 +10,15 @@ class Change {
     }
 
     @Override
+    public String toString() {
+        return "Change{" +
+                "coin2=" + coin2 +
+                ", bill5=" + bill5 +
+                ", bill10=" + bill10 +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
